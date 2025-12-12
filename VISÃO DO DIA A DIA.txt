@@ -1,0 +1,235 @@
+🧩 VISÃO DO DIA A DIA
+
+Como é o trabalho de um(a) Desenvolvedor Back-end Python:
+
+Projetar e implementar APIs (ex.: endpoints, validações, paginação, filtros)
+
+Modelar e evoluir banco de dados (tabelas, índices, migrations, consultas)
+
+Implementar regras de negócio (camadas, serviços, domínio)
+
+Garantir qualidade (testes, logs, observabilidade, revisão de código)
+
+Integrar com terceiros (pagamentos, e-mail, filas, storage) e apoiar deploy (Docker/CI)
+
+🧠 MAPA DE SKILLS
+CORE SKILLS (essenciais):
+
+Python para back-end: OOP, typing, exceptions, módulos, organização de projeto
+
+HTTP e APIs REST: verbos, status codes, autenticação, versionamento, CORS
+
+Banco de dados e SQL: modelagem relacional, joins, índices, transações, normalização
+
+Framework de API (sugestão: FastAPI): rotas, schemas, validação, dependency injection
+
+ORM e migrations (sugestão: SQLAlchemy + Alembic): models, relationships, migrations, sessões
+
+Git e fluxo de trabalho: branches, PR, code review, resolução de conflitos
+
+NICE-TO-HAVE (complementares):
+
+Testes automatizados (pytest): unit/integration, mocks, coverage
+
+Docker + CI/CD básico: containerização, compose, pipeline simples
+
+Caching e filas: Redis, background jobs
+
+Segurança: OWASP Top 10, rate limit, gestão de secrets
+
+FERRAMENTAS E TECNOLOGIAS:
+
+FastAPI, Uvicorn
+
+PostgreSQL (ou MySQL), SQLAlchemy, Alembic
+
+Pytest, HTTPX
+
+Docker, Docker Compose
+
+GitHub (Issues/Projects), GitHub Actions (básico)
+
+📅 ROADMAP DE 90 DIAS
+
+ADAPTADO PARA: 5 horas/semana
+Sugestão de ritmo: 3 sessões/semana (~1h30 + 1h30 + 2h)
+
+MÊS 1 — FUNDAMENTOS (base sólida e primeira API)
+
+SEMANA 1–2: Python “profissional” + ambiente
+
+Estruturar ambiente: venv/poetry (ou pip), lint/format (ruff/black), editor e debug
+
+Revisar Python com foco em back-end:
+
+Funções, escopos, módulos, pacotes
+
+Classes, dataclasses, composição vs herança
+
+Exceptions e padrões de erro
+
+Type hints (typing), pydantic (conceito)
+
+Saída da semana: um repositório com “katas” curtas (ex.: validações, manipulação de listas/dicts, parsing)
+
+SEMANA 3–4: HTTP + REST + FastAPI (API mínima)
+
+Conceitos de HTTP: headers, body, query params, path params, status codes
+
+REST na prática: recursos, verbos, idempotência, paginação, filtros
+
+FastAPI:
+
+Rotas, dependências, Pydantic schemas (request/response)
+
+Validação de entrada, tratamento de erros padrão (HTTPException)
+
+Documentação automática (OpenAPI/Swagger)
+
+Saída da semana: API simples (ex.: “tarefas”) em memória, com endpoints CRUD e validação
+
+MÊS 2 — PRÁTICA (banco, autenticação e qualidade)
+
+SEMANA 5–6: Banco de dados + ORM + migrations
+
+SQL essencial: SELECT, JOIN, GROUP BY, índices, constraints
+
+Modelagem: entidades, relacionamentos (1:N, N:N), integridade referencial
+
+SQLAlchemy + Alembic:
+
+Models, sessions, repository pattern simples
+
+Migrations: criar/evoluir schema com segurança
+
+Saída da semana: API com persistência em PostgreSQL (CRUD completo + migrations)
+
+SEMANA 7–8: Autenticação, autorização e robustez
+
+Autenticação:
+
+Conceitos: session vs token, JWT (claims, expiração), refresh (conceito)
+
+Hash de senha (bcrypt/argon2)
+
+Autorização:
+
+Roles/perfis, permissões por recurso (ex.: “minhas tarefas”)
+
+Robustez:
+
+Logs estruturados
+
+Tratamento consistente de erros (camada de exceções)
+
+CORS, rate limiting (conceito)
+
+Saída da semana: endpoints protegidos + regras (“usuário só acessa dados próprios”)
+
+MÊS 3 — PORTFÓLIO E PREPARAÇÃO (projeto completo e entrevistas)
+
+SEMANA 9–10: Projeto de portfólio (escopo realista)
+
+Definir backlog (MVP + extras) e começar implementação
+
+Implementar:
+
+Camadas (routers/controllers → services → repositories)
+
+Validações e regras de negócio
+
+Paginação e filtros
+
+Saída da semana: MVP funcional com documentação clara e exemplos de uso
+
+SEMANA 11–12: Qualidade + deploy + “empregabilidade”
+
+Testes:
+
+Unit (serviços), integração (API + DB), fixtures, coverage básico
+
+Docker:
+
+Dockerfile, docker-compose (API + DB), variáveis de ambiente
+
+Documentação:
+
+README com setup, endpoints, arquitetura, decisões técnicas
+
+Preparação:
+
+Revisar fundamentos (HTTP/SQL/Python), praticar explicação do projeto
+
+Saída da semana: projeto “apresentável” em GitHub, pronto para entrevista técnica
+
+🚀 PROJETO DE PORTFÓLIO
+
+PROJETO: TaskHub API (Gestão de Usuários e Tarefas)
+
+O QUE FAZER:
+
+Criar uma API REST em FastAPI para gerenciamento de usuários e tarefas, com autenticação, permissões e persistência em banco.
+
+ENTREGÁVEIS:
+
+API REST com CRUD de usuários e tarefas
+
+Banco PostgreSQL + migrations (Alembic)
+
+Suite de testes (pytest) + docker-compose + README completo
+
+CRITÉRIOS DE ACEITAÇÃO:
+
+Autenticação via JWT e hash de senha
+
+Usuário só acessa/edita recursos próprios (autorização)
+
+Documentação: Swagger + README com exemplos (curl/Postman)
+
+DICA: faça um MVP enxuto (login + CRUD tarefas) e depois adicione “extras” (tags, status, paginação, filtros, prioridade).
+
+💬 ROTEIRO DE ENTREVISTAS
+
+PERGUNTA 1: Como você estrutura uma API em camadas?
+COMO RESPONDER:
+“Eu separo responsabilidades: rotas/controladores recebem e validam input, um service aplica regras de negócio, e um repository/DAO fala com o banco. Isso facilita testes, manutenção e evolução do projeto.”
+
+PERGUNTA 2: O que é idempotência e por que importa em REST?
+COMO RESPONDER:
+“Operações idempotentes são aquelas que podem ser repetidas sem mudar o resultado final, como GET e PUT. Isso ajuda em retries e torna o sistema mais previsível.”
+
+PERGUNTA 3: Como você garante segurança de senha e autenticação?
+COMO RESPONDER:
+“Eu nunca salvo senha em texto. Uso hash forte (bcrypt/argon2) e para autenticação uso JWT com expiração, validação de token no backend e controles de autorização por recurso.”
+
+PERGUNTA 4: Como você modelaria tarefas e usuários no banco?
+COMO RESPONDER:
+“Usuário (id, email único, password_hash, created_at). Tarefa (id, user_id FK, título, descrição, status, prioridade, created_at). Índices em email e em user_id/status para consulta eficiente.”
+
+PERGUNTA 5: Como você testaria sua API?
+COMO RESPONDER:
+“Eu testo regras de negócio com unit tests nos services e faço integration tests com um banco de teste, chamando endpoints via client (ex.: TestClient/HTTPX) para validar fluxo completo e status codes.”
+
+🎓 TRILHA DIO RECOMENDADA
+
+TRILHA: Luizalabs – Back-end com Python (bootcamp) 
+DIO
+
+POR QUE ESSA TRILHA:
+
+Ela é diretamente alinhada ao que você precisa: APIs REST com FastAPI, boas práticas, testes, segurança e integração com banco de dados. 
+DIO
+
+Como alternativa (se quiser um reforço extra com IA junto), a DIO também tem a trilha Coding The Future Vivo – Python AI Backend Developer, que inclui fundamentos + APIs com FastAPI e SQL/NoSQL. 
+DIO
+
+PRÓXIMOS PASSOS:
+
+Acesse dio.me
+
+Busque por “Luizalabs – Back-end com Python” 
+DIO
+
+Inscreva-se
+
+Siga o cronograma junto com este roadmap
